@@ -23,12 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('market.urls')),
     path('cart/', include('cart.urls')),
-<<<<<<< HEAD
-    path('mynotes/mynotes/mynotes/', include('mynotes.urls')),
     path('settings/', include('settings.urls')),
-=======
     path('mynotes/', include('mynotes.urls')),
->>>>>>> upstream/master
     #path('account/', include('account.urls')),
 ]
 
