@@ -14,17 +14,23 @@
         {%endif %}
 
         {%if note_preview%}
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{%static 'css/note_preview.css'%}">
+
         {%endif%}
 
+        {%if cart%}
         <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+        {%endif%}
+
+        {%if mynotes or selected_note%}
         <link rel="stylesheet" type="text/css" href="{% static 'css/notes.css' %}">
 
         {%if payment %}
         <link rel="stylesheet" href="{%static 'css/setting_payment.css'%}">
         {%endif %}
 
-
+        {%endif%}
     <title></title>
   </head>
   <body>

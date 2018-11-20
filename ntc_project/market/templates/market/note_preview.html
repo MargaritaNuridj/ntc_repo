@@ -21,8 +21,8 @@
           <span class="fa fa-star checked star"></span>
           <span class="fa fa-star star"></span>
           <span class="fa fa-star star"></span>
-           <span class = "rating_info smaller_lighter" style="color: #fff; margin-top:5px;">{{note.ratings}}</span>
-           <span class = "rating_info smaller_lighter"  style="color: #fff;">({{ note.note_times_purchased }} purchases)</span>
+           <span class = "rating_info smaller_lighter" style="color: #fff; margin-top:5px;">{{overal_rating}}</span>
+           <span class = "rating_info smaller_lighter"  style="color: #fff;">({{ total_ratings }} ratings)</span>
            <span class = "rating_info smaller_lighter"  style="color: #fff;font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;color: #fff; font-weight: 160; font-size: 1em; letter-spacing:1px;margin-left:20px;">{{note.category}}</span>
 <br>
 
@@ -82,14 +82,222 @@
   <div class="card" style="margin-left:auto; margin-right:auto;">
     <!-- style="max-height: 60vh; margin-left:auto; margin-right:auto;"-->
 
+
+
+
+<!-- Review Bars-->
+
+
+<!-- if  ratings -->
+{%if note_comments%}
    <div class="card-body">
 
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <p class=""style="font-size:1.8em;">Student Reviews</p>
+      <p class="" style="font-size:2.6em;"><span>{{overal_rating}}</span></p>
+
+
+
+
+      <p>{{overal_rating}} average based on {{total_ratings}} reviews.</p>
+      <hr style="border:3px solid #f1f1f1">
+
+      <div class="row">
+        <div class="side">
+          <div>5 star</div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-5" style = 'width: {{prog5}}%; height: 18px; background-color: #4CAF50;'></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>{{five_star}}</div>
+        </div>
+        <div class="side">
+          <div>4 star</div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-4" style = 'width: {{prog4}}%; height: 18px; background-color: #2196F3;'></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>{{four_star}}</div>
+        </div>
+        <div class="side">
+          <div>3 star</div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-3" style = 'width: {{prog3}}%; height: 18px; background-color: #00bcd4;'></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>{{three_star}}</div>
+        </div>
+        <div class="side">
+          <div>2 star</div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-2" style = 'width: {{prog2}}%; height: 18px; background-color: #ff9800;'></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>{{two_star}}</div>
+        </div>
+        <div class="side">
+          <div>1 star</div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-1" style = 'width: {{prog1}}%; height: 18px; background-color: #f44336;'></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>{{one_star}}</div>
+        </div>
+      </div>
+
     </div>
+
+
+    <!-- end if no ratings -->
+
+
+
+    <!-- if ratings -->
+    {%else%}
+
+
+    <div class="card-body">
+
+       <p class=""style="font-size:1.8em;">Student Reviews</p>
+       <p class="" style="font-size:2.6em;"><span></span></p>
+
+
+
+
+
+       <p style="font-size: 1.3em;">No Reviews Yet</p>
+       <hr style="border:3px solid #f1f1f1">
+
+       <div class="row">
+         <div class="side">
+           <div>5 star</div>
+         </div>
+         <div class="middle">
+           <div class="bar-container">
+             <div class="bar-5" style = "width: 0%; height: 18px; background-color: #4CAF50;"></div>
+           </div>
+         </div>
+         <div class="side right">
+           <div>0</div>
+         </div>
+         <div class="side">
+           <div>4 star</div>
+         </div>
+         <div class="middle">
+           <div class="bar-container">
+             <div class="bar-4" style = "width: 0%; height: 18px; background-color: #4CAF50;"></div>
+           </div>
+         </div>
+         <div class="side right">
+           <div>0</div>
+         </div>
+         <div class="side">
+           <div>3 star</div>
+         </div>
+         <div class="middle">
+           <div class="bar-container">
+             <div class="bar-3" style = "width: 0%; height: 18px; background-color: #4CAF50;"></div>
+           </div>
+         </div>
+         <div class="side right">
+           <div>0</div>
+         </div>
+         <div class="side">
+           <div>2 star</div>
+         </div>
+         <div class="middle">
+           <div class="bar-container">
+             <div class="bar-2" style = "width: 0%; height: 18px; background-color: #4CAF50;"></div>
+           </div>
+         </div>
+         <div class="side right">
+           <div>0</div>
+         </div>
+         <div class="side">
+           <div>1 star</div>
+         </div>
+         <div class="middle">
+           <div class="bar-container">
+             <div class="bar-1" style = "width: 0%; height: 18px; background-color: #4CAF50;"></div>
+           </div>
+         </div>
+         <div class="side right">
+           <div>0</div>
+         </div>
+       </div>
+
+     </div>
+
+
+    {%endif%}
+    <!-- end if ratings -->
+
+
+
+
+<!-- End review bars --->
+
+
+
+
+
   </div>
 </div>
+
+
+<!-- random content -->
+<!-- user comments -->
+
+  {% if note_comments%}
+
+    {%for comment in note_comments%}
+      <br style="float:clear;">
+      <div class="card-deck" style=" width:100%;">
+        <div class="card" style="width:100%; margin-left:auto;margin-right:auto;">
+
+          <div class="card-body" style="width:100%;">
+            <p class="card-text">
+              <h5 class="card-title" style=" display:inline;">{{comment.buyer_user}}</h5><br>
+              <div>
+                <span class="fa fa-star checked star"></span>
+                <span class="fa fa-star checked star"></span>
+                <span class="fa fa-star checked star"></span>
+                <span class="fa fa-star star"></span>
+                <span class="fa fa-star star"></span>
+              </div>
+            </p>
+
+
+
+
+            <p class="card-text">{{comment.buyer_commentary}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+
+  {%endif%}
+<!-- ends user comments -->
+
+
+
+
+
 
 </div>
 
@@ -105,11 +313,11 @@
         <img class="card-img-top" src="{{note.note_snippet.url}}" alt="Card image cap" style="height:160px;">
 
         <p class="card-title" style="font-size: 1.8em; margin-top: 10px; margin-left: auto; margin-right: auto; font-weight: bold;">$ {{note.note_price}}</p>
-        <form class="" action="index.html" method="post">
-          <button type="button" name="add_cart" style="margin-top:5px; width: 95%; margin-left:auto; margin-right:auto; height:50px; border-radius: 11px;background-color:#ff4d4d; color:#fff;">Add to Cart</button>
+        <!--<form class="" action="{{note.add_to_cart}}" method="post">-->
+          <a href="{{note.add_to_cart_url}}"><button type="button" name="add_cart" style="margin-top:5px; width: 95%; margin-left:auto; margin-right:auto; height:50px; border-radius: 11px;background-color:#ff4d4d; color:#fff;">Add to Cart</button></a>
           <br>
           <button type="button" name="buy_now" style="margin-top:15px; width: 95%; margin-left:auto; margin-right:auto; height:50px; border-radius: 11px; color:grey;">Buy Now</button>
-        </form>
+        <!-- </form>-->
       </div>
     </div>
   </div>
