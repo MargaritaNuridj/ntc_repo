@@ -19,6 +19,12 @@
 
         <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/notes.css' %}">
+
+        {%if payment %}
+        <link rel="stylesheet" href="{%static 'css/setting_payment.css'%}">
+        {%endif %}
+
+
     <title></title>
   </head>
   <body>
